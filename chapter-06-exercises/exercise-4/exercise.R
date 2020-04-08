@@ -4,12 +4,16 @@
 # returns whether or not (e.g., a boolean) the length of one argument is greater
 # than or equal to twice the length of the other.
 # Hint: compare the length difference to the length of the smaller string
-
+is_twice_as_long <- function(a, b) {
+  return(nchar(a) >= 2*nchar(b) || nchar(b) >= 2*nchar(a))
+}
 
 # Call your `is_twice_as_long` function by passing it different length strings
 # to confirm that it works. Make sure to check when _either_ argument is twice
 # as long, as well as when neither are!
-
+print(is_twice_as_long("abc", "abcdefg")) # true
+print(is_twice_as_long("1234", "98")) # true
+print(is_twice_as_long("1", "2")) # false
 
 
 # Define a function `describe_difference` that takes in two strings. The
@@ -17,8 +21,21 @@
 #   "Your first string is longer by N characters"
 #   "Your second string is longer by N characters"
 #   "Your strings are the same length!"
-
+describe_difference <- function(a, b) {
+  if (nchar(a) > nchar(b)) {
+    return(paste("Your first string is longer by", nchar(a) - nchar(b), "characters"))
+  } else if (nchar(b) > nchar(a)) {
+    return(paste("Your second string is longer by", nchar(b) - nchar(a), "characters"))
+  } else {
+    return("Your strings are the same length!")
+  }
+}
 
 # Call your `describe_difference` function by passing it different length strings
 # to confirm that it works. Make sure to check all 3 conditions1
+
+print(describe_difference("longer", "short")) # first string longer by 1
+print(describe_difference("a", "bbbbbbbb")) # second string longer by 7
+print(describe_difference("zero", "five")) # same length
+
 
