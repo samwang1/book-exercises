@@ -1,7 +1,11 @@
 # Exercise 2
 In this exercise, you'll practice resolving a merge conflict.
 
+<<<<<<< HEAD
 > "Luke, I am your father"
+=======
+> Warning!
+>>>>>>> danger
 
 To complete the exercise, follow the below steps:
 
